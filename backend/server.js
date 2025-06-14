@@ -17,7 +17,7 @@ const mongoUrl = process.env.MONGO_URI;
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://blog-app-8wi9.vercel.app/',
+    origin: process.env.CLIENT_URL || 'https://blog-app-8wi9-git-main-rajveers-projects-80645a24.vercel.app/',
     credentials: true,
 }))
 
