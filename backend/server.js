@@ -16,10 +16,17 @@ const port = process.env.PORT || 3000;
 const mongoUrl = process.env.MONGO_URI;
 
 app.use(express.json());
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  'https://blog-app-8wi9-git-main-rajveers-projects-80645a24.vercel.app/'
+];
+
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'https://blog-app-8wi9-git-main-rajveers-projects-80645a24.vercel.app/',
-    credentials: true,
-}))
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 
 connectDB(mongoUrl).then(console.log('connected to Database')).catch((err) => {})
 
