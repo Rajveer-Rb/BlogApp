@@ -41,6 +41,7 @@ const Nav = () => {
 
     try {
       const userId = await getUserId();
+      if(!userId) return;
       // console.log('User ID:', userId);
 
       const res = await fetch(`${port}/user/dashboard/${userId}`, {
