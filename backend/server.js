@@ -19,7 +19,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  'https://blog-app-8wi9-git-main-rajveers-projects-80645a24.vercel.app/'
+  'https://blog-app-8wi9.vercel.app/'
 ];
 
 app.use(cors({
@@ -31,6 +31,7 @@ app.use(cors({
     }
   },
   credentials: true,
+  allowedHeaders: 'Access-Control-Allow-Origin'
 }));
 
 
