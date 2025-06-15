@@ -34,8 +34,7 @@ app.use(cors({
 }));
 
 
-
-connectDB(mongoUrl).then(console.log('connected to Database')).catch((err) => {})
+// connectDB(mongoUrl).then(console.log('connected to Database')).catch((err) => {})
 
 app.use(express.static(path.resolve("./public")))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -79,6 +78,12 @@ app.get('/api/auth/getuserid', (req,res) => {
 app.use('/user', userRoute);
 app.use('/blog', blogRoute);
 
-app.listen(port, (req,res) => {
+const startServer = async () => {
+  await connectDB(mongoUrl).then(console.log('connected to Database')).catch((err) => {})  
+  
+  app.listen(port, (req,res) => {
     console.log(`server running at port: ${port}`);
-})
+  })
+}
+
+startServer();
