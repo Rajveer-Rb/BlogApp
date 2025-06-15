@@ -24,6 +24,7 @@ const Yourblogs = () => {
       const res = await fetch(`${port}/blog/yourblogs/${userId}`, {
         method: 'GET',
         credentials: 'include',
+        headers: 'Access-Control-Allow-Origin',
       });
 
       const data = await res.json();
