@@ -21,7 +21,6 @@ const Dashboard = () => {
       const res = await fetch(`${port}/user/dashboard/${userId}`, {
         method: 'GET',
         credentials: 'include',
-        headers: 'Access-Control-Allow-Origin',
       });
 
       const data = await res.json();
@@ -73,7 +72,6 @@ const Dashboard = () => {
         method: 'POST',
         credentials: 'include',
         body: formData,
-        headers: 'Access-Control-Allow-Origin',
       });
 
       const data = await res.json();

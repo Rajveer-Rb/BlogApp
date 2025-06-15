@@ -33,7 +33,6 @@ const Home = () => {
                 const res = await fetch(`${port}/blog`, {
                     method: 'GET',
                     credentials: 'include',
-                    headers: 'Access-Control-Allow-Origin',
                 })
 
                 const data = await res.json();
