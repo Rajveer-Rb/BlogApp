@@ -102,7 +102,7 @@ const Dashboard = () => {
 
           <div className='my-1 flex flex-col gap-1 w-full'>
             <label htmlFor="name" className='text-sm font-bold'>Name</label>
-            <input name="name" value={user.name} type="text" className='p-2 rounded-lg bg-slate-600 text-white' />
+            <input name="name" value={user.name} type="text" className='p-2 rounded-lg bg-slate-600 text-white border-none outline-black' />
           </div>
 
           <div className='my-1 flex flex-col gap-1 w-full'>
